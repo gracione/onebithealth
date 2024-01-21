@@ -1,5 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, useColorScheme, View } from "react-native";
+import Title from "./src/components/Title";
+import Main from "./src/components/Main";
 
 function App(): React.JSX.Element {
   return (
@@ -11,7 +13,7 @@ function App(): React.JSX.Element {
         alignItems: "center",
       }}
     >
-      <Text style={{ color: "black" }}>test</Text>
+      <Main></Main>
     </View>
   );
 }
