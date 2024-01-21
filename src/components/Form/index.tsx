@@ -4,13 +4,16 @@ import { View, Text, TextInput, Button } from "react-native";
 const Form: React.FC = () => {
   const [height, setHeight] = useState<string | null>(null);
   const [weight, setWeight] = useState<string | null>(null);
-  const [messageImc, setMessageImc] = useState<string>("Preencha o peso e altura");
+  const [messageImc, setMessageImc] = useState<string>(
+    "Preencha o peso e altura"
+  );
   const [imc, setImc] = useState<string | null>(null);
   const [textButton, setTextButton] = useState<string>("Calcular");
 
   const imcCalculator = () => {
     if (height && weight) {
-      const calculatedImc = parseFloat(weight) / (parseFloat(height) * parseFloat(height));
+      const calculatedImc =
+        parseFloat(weight) / (parseFloat(height) * parseFloat(height));
       setImc(calculatedImc.toFixed(2).toString());
     }
   };
@@ -32,22 +35,24 @@ const Form: React.FC = () => {
   return (
     <View>
       <View>
-        <Text>Altura</Text>
+        <Text style={{ color: "black" }}>Altura</Text>
         <TextInput
           placeholder="Ex. 1.75"
           keyboardType="numeric"
-          value={height || ""}
+          placeholderTextColor="gray"
           onChangeText={(text) => setHeight(text.replace(/[^0-9.]/g, ""))}
+          value={height || ""}
         />
       </View>
 
       <View>
-        <Text>Peso</Text>
+        <Text style={{ color: "black" }}>Peso</Text>
         <TextInput
           placeholder="Ex. 70"
           keyboardType="numeric"
-          value={weight || ""}
+          placeholderTextColor="gray"
           onChangeText={(text) => setWeight(text.replace(/[^0-9]/g, ""))}
+          value={weight || ""}
         />
       </View>
 
@@ -55,8 +60,8 @@ const Form: React.FC = () => {
 
       {imc !== null && (
         <View>
-          <Text>{messageImc}</Text>
-          <Text>{imc}</Text>
+          <Text style={{ color: "black" }}>{messageImc}</Text>
+          <Text style={{ color: "black" }}>{imc}</Text>
         </View>
       )}
     </View>

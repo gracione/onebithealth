@@ -11,7 +11,6 @@ export default function Title() {
         alignItems: "center",
       }}
     >
-      <Text style={{ color: "black" }}>Onebithealth</Text>
     </View>
   );
 }
